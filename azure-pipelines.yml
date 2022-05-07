@@ -18,7 +18,7 @@ variables:
   environmentName: 'bootcamp-java'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'windows-latest'
 
 stages:
 - stage: Build
@@ -50,8 +50,8 @@ stages:
   dependsOn: Build
   condition: succeeded()
   jobs:
-  - deployment: DeployLinuxWebApp
-    displayName: Deploy Linux Web App
+  - deployment: DeployWindowsWebApp
+    displayName: Deploy Windows Python Web App
     environment: $(environmentName)
     pool:
       vmImage: $(vmImageName)
@@ -63,6 +63,6 @@ stages:
             displayName: 'Azure Web App Deploy: bootcamp-java'
             inputs:
               azureSubscription: $(azureSubscription)
-              appType: webAppLinux
+              appType: webApp
               appName: $(webAppName)
               package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
