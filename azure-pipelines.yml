@@ -12,7 +12,7 @@ variables:
   azureSubscription: '399d3e98-57d6-4b8a-973a-d3bf1fc87c66'
 
   # Web app name
-  webAppName: 'bootcamp-java'
+  webAppName: 'bootcamp-angular-dev'
 
   # Environment name
   environmentName: 'bootcamp-java'
